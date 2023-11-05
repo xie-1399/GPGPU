@@ -3,7 +3,12 @@ project(Cuda CUDA)
 
 set(CMAKE_CUDA_STANDARD 11)
 
-add_executable(Cuda Introduce/hello.cu)
+include_directories(./common)
 
-set_target_properties(Cuda PROPERTIES
+add_executable(hello Introduce/hello.cu)
+add_executable(dimension Introduce/dimension.cu)
+add_executable(checkIt Introduce/checkIt.cu)
+add_executable(memory Introduce/memory.cu)
+
+set_target_properties(hello PROPERTIES
         CUDA_SEPARABLE_COMPILATION ON)
